@@ -1,5 +1,15 @@
   1 - volgens mijn opgaveblad juist maar dat lijkt me niet waarschijnlijk
   
+  - Unchecked exceptions zijn vrijwel altijd programmeerfouten, bv IndexOutOfBounds. Deze worden volgens logica niet met throws aangekondigd
+  - Als je een custom exception een unchecked exception is (zoals hier wel de bedoeling is), dan is deze een extension van RuntimeException en niet van Exception
+  - Verder lees deze stukjes over unchecked exceptions.  Als je googled vind je heel veel info hierover.
+  Zie voor uitleg unchecked exceptions pagina 483
+  https://stackoverflow.com/questions/20871763/should-i-declare-unchecked-exceptions-in-the-throws-specification)
+  https://stackoverflow.com/questions/19857008/extending-exception-runtimeexception-in-java
+  
+  Zo iets duidelijker voor je?
+  
+  
   public void add(E el) //throws FullBagException //nb unchecked, niet correct voor iets binnen programma logica
   {
 	if (this.amount() < this.maximum())
