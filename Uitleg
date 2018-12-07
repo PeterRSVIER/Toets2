@@ -1,0 +1,31 @@
+  1 - volgens mijn opgaveblad juist maar dat lijkt me niet waarschijnlijk
+  
+  public void add(E el) //throws FullBagException //nb unchecked, niet correct voor iets binnen programma logica
+  {
+	if (this.amount() < this.maximum())
+		list.add(el);
+	else
+		throw new FullBagException("Bag full");//No exception of type FullBagException can be thrown; an exception type must be a subclass of Throwable
+  }
+  
+  2 - Bag.java compileert foutloos maar BagTest.java geeft foutmelding 'Unhandled exception type FullBagException'
+Daarnaast is dit volgens Henk een unchecked exception wat niet de bedoeling is
+
+public void add(E el) throws FullBagException //nb unchecked, niet correct voor iets binnen programma logica
+  {
+	if (this.amount() < this.maximum())
+		list.add(el);
+	else
+		throw new FullBagException("Bag full");
+  }
+
+  public class FullBagException extends Exception
+	  {
+	     public FullBagException(String err) {
+	     }
+    }
+
+
+
+
+
